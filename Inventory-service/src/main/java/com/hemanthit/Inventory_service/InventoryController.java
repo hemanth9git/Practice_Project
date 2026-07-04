@@ -19,8 +19,8 @@ public class InventoryController {
         return new ResponseEntity<>(repository.save(inventory), HttpStatus.CREATED);
     }
 
-    @GetMapping("getItem/{itemName}")
-    public Boolean checkAvailability(@PathVariable String itemName){
+    @GetMapping("getItem/{itemName}/{quantity}")
+    public Boolean checkAvailability(@PathVariable String itemName,@PathVariable Integer quantity){
 
         Inventory inventory=repository.findByItemName(itemName);
         if(inventory==null){

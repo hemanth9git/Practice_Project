@@ -3,8 +3,7 @@ package com.hemanthit.order_service;
 import lombok.Data;
 
 @Data
-public class OrderRequest {
-    private int orderId;
+public class Inventory {
     private String itemName;
     private int quantity;
 }
