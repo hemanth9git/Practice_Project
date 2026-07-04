@@ -1,3 +1,25 @@
 spring:
   application:
     name: practice_project
+  datasource:
+    url: jdbc:mysql://localhost:3306/springbatch16
+    username: root
+    password: Hemanth@#123
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+logging:
+  level:
+    root: INFO
+    com.hemanthit: DEBUG
+  file:
+    name: C:\Users\heman\OneDrive\Desktop\logs\application.log
+
+server:
+  port: 8089
