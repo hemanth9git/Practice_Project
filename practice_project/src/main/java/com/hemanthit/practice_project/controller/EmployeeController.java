@@ -33,4 +33,10 @@ public class EmployeeController {
         List<Employee> empList =service.filterEmployee(empCode,filter);
         return new ResponseEntity<>(empList,HttpStatus.OK);
     }
+
+    @GetMapping("searchEmp/{searchTerm}")
+    public ResponseEntity<List<Employee>> searchEmployee(@PathVariable String searchTerm){
+        java.util.List<Employee> searchEmp =service.searchEmployee(searchTerm);
+        return new ResponseEntity<>(searchEmp,HttpStatus.OK);
+    }
 }

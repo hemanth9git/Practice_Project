@@ -55,4 +55,9 @@ public class EmployeeService {
         }
         return list;
     }
+
+    public List<Employee> searchEmployee(String searchTerm) {
+
+        return repository.searchEmployee(searchTerm);
+    }
 }
