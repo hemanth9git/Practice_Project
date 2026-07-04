@@ -18,7 +18,7 @@ public interface EmployeeRepository extends JpaRepository<Employee,Integer> {
     public List<Employee> findByEmpCodeNotContaining(String empCode);
     public List<Employee> findByEmpCode(String empCode);
     public List<Employee> findByEmpCodeNot(String empCode);
-    //Custom query writing 
+    //Custom query writing
     @Query("select e from Employee e where concat(e.firstName,e.empCode,e.empSalary,e.fullName,e.lastName) like %?1%")
     List<Employee> searchEmployee(String searchTerm);
 
