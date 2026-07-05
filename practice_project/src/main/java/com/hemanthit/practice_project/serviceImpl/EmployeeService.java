@@ -1,6 +1,7 @@
 package com.hemanthit.practice_project.serviceImpl;
 
 import com.hemanthit.practice_project.constants.SearchFilters;
+import com.hemanthit.practice_project.exceptions.IdNotFoundException;
 import com.hemanthit.practice_project.model.Employee;
 import com.hemanthit.practice_project.repository.EmployeeRepository;
 import lombok.AllArgsConstructor;
@@ -59,5 +60,9 @@ public class EmployeeService {
     public List<Employee> searchEmployee(String searchTerm) {
 
         return repository.searchEmployee(searchTerm);
+    }
+
+    public Employee getEmployee(Integer id) {
+      return repository.findById(id).orElseThrow(IdNotFoundException::new);
     }
 }

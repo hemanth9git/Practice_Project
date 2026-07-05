@@ -39,4 +39,12 @@ public class EmployeeController {
         java.util.List<Employee> searchEmp =service.searchEmployee(searchTerm);
         return new ResponseEntity<>(searchEmp,HttpStatus.OK);
     }
+
+    @GetMapping("getEmployee/{id}")
+    public ResponseEntity<Employee> getEmployee(@PathVariable Integer id){
+        Employee getEmp=service.getEmployee(id);
+        return new ResponseEntity<>(getEmp,HttpStatus.OK);
+    }
+
+
 }
