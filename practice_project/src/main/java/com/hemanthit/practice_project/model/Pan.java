@@ -1,5 +1,6 @@
 package com.hemanthit.practice_project.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -12,7 +13,7 @@ public class Pan {
     private int panId;
     @Column(unique = true)
     private String panNumber;
-
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "pn_fkid") // foreign key
     private Customer cust;
