@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.engine.spi.CascadeStyles;
 
+import java.util.List;
+
 @Data
 @Entity
 @Table(name="customer_practice")
@@ -19,4 +21,7 @@ public class Customer {
     @OneToOne(mappedBy = "cust",cascade = CascadeType.ALL)//It only saves both the entities
     //or it won't be saved anyone. Either it saves both or it doesnot saves both.
     private Pan pan;
+
+    @OneToMany(mappedBy = "custo",cascade = CascadeType.ALL)
+    private List<Orders> orders;
 }
