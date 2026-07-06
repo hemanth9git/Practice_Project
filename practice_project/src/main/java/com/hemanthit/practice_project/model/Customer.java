@@ -25,7 +25,7 @@ public class Customer {
     @OneToMany(mappedBy = "custo",cascade = CascadeType.ALL)
     private List<Orders> orders;
 
-    @ManyToMany(mappedBy = "customer",cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "practice_foreign",
             joinColumns = @JoinColumn(name = "cid"),

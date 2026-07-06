@@ -1,5 +1,6 @@
 package com.hemanthit.practice_project.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -15,6 +16,7 @@ public class Products {
     private String productName;
     private int price;
 
+    @JsonIgnore
     @ManyToMany
     private List<Customer> customer;
 }
